@@ -79,7 +79,8 @@ then
 
 
 		## List hidden folders and files (only if they exist)
-		hidden_files=$(/usr/local/bin/gls -U -d .!(|.) 2> /dev/null | wc -l)	
+		hidden_files=$(/usr/local/bin/gls -U -d .* 2> /dev/null | wc -l)
+        hidden_files=$((hidden_files - 2))
 		if [ "$hidden_files" != "0" ]
 		then
 			echo ""
